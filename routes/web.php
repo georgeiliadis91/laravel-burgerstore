@@ -16,6 +16,5 @@ Route::get('/', function () {
 });
 
 Route::get('/burgers', 'BurgerController@index');
-
-
+Route::get('/burgers/create', 'BurgerController@create');
 Route::get('/burgers/{id}', 'BurgerController@show');

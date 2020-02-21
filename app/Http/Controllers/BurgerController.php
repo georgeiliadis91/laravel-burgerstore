@@ -25,7 +25,7 @@ class BurgerController extends Controller
         $name = request('name');
         $age = request('age');
 
-        return view('burgers', [
+        return view('burgers.index', [
             'burgers' => $burgers,
             // 'name' => request('name'),
             // 'age' => request('age')
@@ -34,6 +34,11 @@ class BurgerController extends Controller
 
     public function show($id)
     {
-        return view('details', ['id' => $id]);
+        return view('burgers.show', ['id' => $id]);
+    }
+
+    public function create()
+    {
+        return view('burgers.create');
     }
 }
