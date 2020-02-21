@@ -34,7 +34,8 @@ class BurgerController extends Controller
 
     public function show($id)
     {
-        return view('burgers.show', ['id' => $id]);
+        $burger = Burger::findOrFail($id);
+        return view('burgers.show', ['burger' => $burger]);
     }
 
     public function create()
