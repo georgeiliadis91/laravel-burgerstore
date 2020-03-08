@@ -23,7 +23,7 @@
             Best Burgers
         </div>
         <p class="msg">{{session('msg')}}</p>
-        <a href="/burgers/create">Order a burger</a>
+        <a href="{{route('burgers.create')}}">Order a burger</a>
 
 
     </div>

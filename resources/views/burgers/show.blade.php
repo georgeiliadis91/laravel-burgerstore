@@ -18,7 +18,7 @@
 <a href="/burgers" class="back">
   <- Back to all burgers </a> 
 
-  <form action="/burgers/{{$burger->id}}" method="POST">
+  <form action="{{route('burgers.destroy', $burger->id)}}" method="POST">
   @csrf
   @method('DELETE')
   <button >Complete Order</button>
