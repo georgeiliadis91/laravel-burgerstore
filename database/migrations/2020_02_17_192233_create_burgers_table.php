@@ -19,6 +19,7 @@ class CreateBurgersTable extends Migration
             $table->string('patty');
             $table->string('base');
             $table->string('name');
+            $table->json('toppings');
         });
     }
 

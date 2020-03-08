@@ -15,6 +15,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/burgers', 'BurgerController@index');
+
+Route::get('/burgers', 'BurgerController@index')->middleware('auth');
 Route::get('/burgers/create', 'BurgerController@create');
-Route::get('/burgers/{id}', 'BurgerController@show');
+Route::post('/burgers', 'BurgerController@store');
+Route::get('/burgers/{id}', 'BurgerController@show')->middleware('auth');
+Route::delete('/burgers/{id}', 'BurgerController@destroy')->middleware('auth');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
